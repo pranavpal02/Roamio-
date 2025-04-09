@@ -1,8 +1,17 @@
 import React from "react";
 import { ExpertiseData } from "../assets/assets";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const ExpertiseMenu = () => {
+  const navigate = useNavigate();
+
+  const handleClick = (specialty) => {
+    window.scrollTo(0, 0); // Scroll to top
+    navigate(
+      `/tourguides?specialty=${encodeURIComponent(specialty.toLowerCase())}`
+    );
+  };
+
   return (
     <div className="p-4">
       {/* Centered heading section */}
@@ -20,13 +29,10 @@ const ExpertiseMenu = () => {
         className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6"
       >
         {ExpertiseData.map((guide) => (
-          <Link
-            onClick={() => scrollTo(0, 0)}
-            to={`/tourguides/${encodeURIComponent(
-              guide.specialty.toLowerCase()
-            )}`}
+          <div
             key={guide.id}
-            className="bg-white rounded-2xl shadow-md p-4 flex flex-col items-center text-center hover:shadow-xl transition"
+            onClick={() => handleClick(guide.specialty)}
+            className="cursor-pointer bg-white rounded-2xl shadow-md p-4 flex flex-col items-center text-center hover:shadow-xl transition"
           >
             <img
               src={guide.image}
@@ -35,7 +41,7 @@ const ExpertiseMenu = () => {
             />
             <h3 className="text-xl font-semibold">{guide.name}</h3>
             <p className="text-gray-600">{guide.specialty}</p>
-          </Link>
+          </div>
         ))}
       </div>
     </div>

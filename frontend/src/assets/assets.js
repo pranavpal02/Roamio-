@@ -45,14 +45,14 @@ export const ExpertiseData = [
     image: guide8,
   },
   { id: 9, name: "Ethan Thomas", specialty: "Luxury Travel", image: guide9 },
-  { id: 10, name: "Ava Patel", specialty: "Photography Tours", image: guide10 },
+  { id: 10, name: "Raj Patel", specialty: "Photography Tours", image: guide10 },
   {
     id: 11,
     name: "Noah Garcia",
     specialty: "Religious Pilgrimages",
     image: guide11,
   },
-  { id: 12, name: "Mia Anderson", specialty: "Eco-Tourism", image: guide12 },
+  { id: 12, name: "Preksha Mehta", specialty: "Eco-Tourism", image: guide12 },
   {
     id: 13,
     name: "William Clark",
@@ -61,7 +61,7 @@ export const ExpertiseData = [
   },
   {
     id: 14,
-    name: "Isabella Harris",
+    name: "Neehal Hansoti",
     specialty: "Architectural Walks",
     image: guide14,
   },
